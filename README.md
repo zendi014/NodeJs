@@ -10,4 +10,4 @@ NodeJS Base Framework
 5. setting up your database sdk
    - download the key from firebase
    - edit /api/sdk/fs.js
-6. create the api service on /api/resources
+6. create the api service on /api/resources/service.js
