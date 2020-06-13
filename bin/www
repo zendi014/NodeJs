@@ -21,6 +21,33 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
+
+// https://github.com/timum-viw/socket.io-client
+const io = require(
+  "socket.io"
+)(server);
+
+
+io.on('connection', function(socket){
+
+  socket.on('connection', function(dt){
+      console.log(dt);
+  })
+
+  socket.on("ui", function(dt){
+      console.log(dt);
+  });
+
+  socket.on("ebd", function(dt){
+      console.log(dt);
+      io.emit("srv",dt);
+  })
+})
+
+
+
+
+
 /**
  * Listen on provided port, on all network interfaces.
  */
@@ -87,4 +114,12 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+}
+
+
+
+function random(min, max) {  
+  return Math.floor(
+    Math.random() * (max - min) + min
+  )
 }

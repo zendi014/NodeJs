@@ -25,6 +25,14 @@ r.get('/pages/:collection', function(req, res){
   res.render('./main/pages', data);
 });
 
+r.get('/socket/:collection', function(req, res){
+  data = {
+      title: req.params.collection.toUpperCase(),
+      name: 'SERVICE ',
+  }
+  res.render('./main/socket_page', data);
+});
+
 
 
 module.exports = r;

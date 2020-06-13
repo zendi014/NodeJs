@@ -4,6 +4,6 @@
    - open cmd 'npm i -g nodemon'
 4. download the project from https://github.com/zendi014/NodeJS
 5. setting up your database sdk
-   - download the key from firebase
+   - download the key from firebase ->project setting -> service account
    - edit /api/sdk/fs.js
 6. create the api service on /api/resources
